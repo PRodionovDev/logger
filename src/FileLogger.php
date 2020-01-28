@@ -14,44 +14,40 @@ class FileLogger implements Logger
 	/**
 	 * Логирование ошибок
 	 *
-	 * @param string $level
 	 * @param string $message
 	 */
-	public function error($level, $message)
+	public function error($message)
 	{
-		
+		var_dump($message);
 	}
 
 	/**
 	 * Логирование информационных блоков
 	 *
-	 * @param string $level
 	 * @param string $message
 	 */
-	public function info($level, $message)
+	public function info($message)
 	{
-		
+		var_dump($message);
 	}
 
 	/**
 	 * Логирование режима отладки
 	 *
-	 * @param string $level
 	 * @param string $message
 	 */
-	public function debug($level, $message)
+	public function debug($message)
 	{
-		
+		var_dump($message);
 	}
 
 	/**
 	 * Логирование уведомлений
 	 *
-	 * @param string $level
 	 * @param string $message
 	 */
-	public function notice($level, $message)
+	public function notice($message)
 	{
-		
+		var_dump($message);
 	}
 }

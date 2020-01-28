@@ -12,32 +12,28 @@ interface Logger
 	/**
 	 * Логирование ошибок
 	 *
-	 * @param string $level
 	 * @param string $message
 	 */
-	public function error($level, $message);
+	public function error($message);
 
 	/**
 	 * Логирование информационных блоков
 	 *
-	 * @param string $level
 	 * @param string $message
 	 */
-	public function info($level, $message);
+	public function info($message);
 
 	/**
 	 * Логирование режима отладки
 	 *
-	 * @param string $level
 	 * @param string $message
 	 */
-	public function debug($level, $message);
+	public function debug($message);
 
 	/**
 	 * Логирование уведомлений
 	 *
-	 * @param string $level
 	 * @param string $message
 	 */
-	public function notice($level, $message);
+	public function notice($message);
 }
