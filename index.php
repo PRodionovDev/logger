@@ -1,18 +1,25 @@
 <?php
 
-include 'src/Logger.php';
+include 'src/Log.php';
+include 'src/FileLogger.php';
 
 /**
  * Подключение компонента логгирования
  *
  */
-$logger = new Logger\Logger();
+$logger = new Logger\Log();
+
+/**
+ * Логирование в файл
+ *
+ */
+$fileLog = new Logger\FileLogger();
 
 /**
  * Логирование
  *
  */
-$logger->error('Error message');
-$logger->info('Info message');
-$logger->debug('Debug message');
-$logger->notice('Notice message');
+$logger->log($fileLog, Logger\Log::LEVEL_ERROR, 'Error message');
+$logger->log($fileLog, Logger\Log::LEVEL_INFO, 'Info message');
+$logger->log($fileLog, Logger\Log::LEVEL_DEBUG, 'Debug message');
+$logger->log($fileLog, Logger\Log::LEVEL_NOTICE, 'Notice message');

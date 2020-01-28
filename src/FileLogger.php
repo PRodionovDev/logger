@@ -2,12 +2,14 @@
 
 namespace Logger;
 
+include 'Logger.php';
+
 /**
- * Базовый интерфейс Компонента определяет уровень логов и определяет
- * стратегию записи в файл
+ * Конкретный сервис компонента логирования,
+ * реализующий запись логов в файл
  *
  */
-interface Logger
+class FileLogger implements Logger
 {
 	/**
 	 * Логирование ошибок
@@ -15,7 +17,10 @@ interface Logger
 	 * @param string $level
 	 * @param string $message
 	 */
-	public function error($level, $message);
+	public function error($level, $message)
+	{
+		
+	}
 
 	/**
 	 * Логирование информационных блоков
@@ -23,7 +28,10 @@ interface Logger
 	 * @param string $level
 	 * @param string $message
 	 */
-	public function info($level, $message);
+	public function info($level, $message)
+	{
+		
+	}
 
 	/**
 	 * Логирование режима отладки
@@ -31,7 +39,10 @@ interface Logger
 	 * @param string $level
 	 * @param string $message
 	 */
-	public function debug($level, $message);
+	public function debug($level, $message)
+	{
+		
+	}
 
 	/**
 	 * Логирование уведомлений
@@ -39,5 +50,8 @@ interface Logger
 	 * @param string $level
 	 * @param string $message
 	 */
-	public function notice($level, $message);
+	public function notice($level, $message)
+	{
+		
+	}
 }
