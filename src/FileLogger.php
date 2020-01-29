@@ -12,13 +12,32 @@ include 'Logger.php';
 class FileLogger implements Logger
 {
 	/**
+	 * Файл логов
+	 *
+	 */
+	const FILE_LOG = 'application.log';
+
+	/**
+	 * Файл логов error
+	 *
+	 */
+	const FILE_ERROR = 'application.error.log';
+
+	/**
+	 * Файл логов info
+	 *
+	 */
+	const FILE_INFO = 'application.info.log';
+
+	/**
 	 * Логирование ошибок
 	 *
 	 * @param string $message
 	 */
 	public function error($message)
 	{
-		var_dump($message);
+		$this->save(self::FILE_LOG, $message);
+		$this->save(self::FILE_ERROR, $message);
 	}
 
 	/**
@@ -28,7 +47,8 @@ class FileLogger implements Logger
 	 */
 	public function info($message)
 	{
-		var_dump($message);
+		$this->save(self::FILE_LOG, $message);
+		$this->save(self::FILE_INFO, $message);
 	}
 
 	/**
@@ -38,7 +58,7 @@ class FileLogger implements Logger
 	 */
 	public function debug($message)
 	{
-		var_dump($message);
+		$this->save(self::FILE_LOG, $message);
 	}
 
 	/**
@@ -48,6 +68,18 @@ class FileLogger implements Logger
 	 */
 	public function notice($message)
 	{
+		$this->save(self::FILE_LOG, $message);
+	}
+
+	/**
+	 * Сохранение лога в файл
+	 *
+	 * @param string $filename
+	 * @param string $message
+	 */
+	private function save($filename, $message)
+	{
+		var_dump($filename);
 		var_dump($message);
 	}
 }
