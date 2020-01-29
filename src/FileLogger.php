@@ -79,7 +79,9 @@ class FileLogger implements Logger
 	 */
 	private function save($filename, $message)
 	{
-		var_dump($filename);
-		var_dump($message);
+		$url = 'logs/';
+		$filename = $url . $filename;
+		$message = $message ."\r\n";
+		file_put_contents($filename, $message, FILE_APPEND);
 	}
 }
